@@ -9,6 +9,11 @@ const cartTotal = document.getElementById('cart-total');
 let cart = [];
 
 
+let fetchedPlants = [];
+const showMoreContainer = document.getElementById('show-more-container');
+const showMoreBtn = document.getElementById('show-more-btn');
+
+
 const displayCategories = (categories) => {
     categories.forEach((category) => {
         const categoryBtn = document.createElement('button');
@@ -32,7 +37,10 @@ const loadPlantsByCategory = async (categoryId) => {
     showLoadingSpinner(true);
     const res = await fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`);
     const data = await res.json();
-    displayPlants(data.plants);
+
+    fetchedPlants = data.plants;
+    displayPlants(fetchedPlants, false);
+
     showLoadingSpinner(false);
 }
 
@@ -58,17 +66,34 @@ const loadAllPlants = async () => {
     showLoadingSpinner(true);
     const res = await fetch('https://openapi.programming-hero.com/api/plants');
     const data = await res.json();
-    displayPlants(data.plants);
+
+    fetchedPlants = data.plants;
+    displayPlants(fetchedPlants, false);
+
     showLoadingSpinner(false);
 }
 
-const displayPlants = (plants) => {
-    // plantCardsContainer.innerHTML = '';
-    plants.forEach((plant) => {
+const displayPlants = (plants, isShowAll) => {
+    plantCardsContainer.innerHTML = '';
+
+    const limit = 6;
+
+    let plantsToDisplay = plants;
+
+    if (!isShowAll && plants.length > limit) {
+        plantsToDisplay = plants.slice(0, limit);
+        showMoreContainer.classList.remove('hidden');
+    } else {
+        showMoreContainer.classList.add('hidden');
+    }
+
+    plantsToDisplay.forEach((plant) => {
         const plantCard = document.createElement('div');
         plantCard.className = "p-4 bg-base-100 rounded-lg shadow-md space-y-3";
         plantCard.innerHTML = `
-        <img class="max-w-[298px] max-h-[178px] object-cover cursor-pointer w-full" src=${plant.image} alt="${plant.name}">
+        <div class="h-[178px] w-full overflow-hidden rounded-lg">
+             <img class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300" src=${plant.image} alt="${plant.name}">
+        </div>
         <div class="space-y-2">
             <h3 class="font-semibold text-sm">${plant.name}</h3>
             <p class="text-[#71717A] text-xs line-clamp-2">${plant.description}</p>
@@ -82,6 +107,10 @@ const displayPlants = (plants) => {
         plantCardsContainer.appendChild(plantCard);
     })
 }
+
+showMoreBtn.addEventListener('click', () => {
+    displayPlants(fetchedPlants, true);
+});
 
 const addToCart = (id, name, price) => {
     const existingItem = cart.find(item => item.id === id);
@@ -131,7 +160,7 @@ const removeFromCart = (id) => {
 const showLoadingSpinner = (status) => {
     if (status) {
         loadingSpinner.classList.remove('hidden');
-    } else {  
+    } else {
         loadingSpinner.classList.add('hidden');
     }
 }
