@@ -2,6 +2,45 @@
 const categoryBtnContainer = document.getElementById('all-category-btns');
 const allCategoryBtn = document.getElementsByClassName('category-btn');
 const plantCardsContainer = document.getElementById('plant-card-container');
+const loadingSpinner = document.getElementById('loading-spinner');
+
+
+const displayCategories = (categories) => {
+    categories.forEach((category) => {
+        const categoryBtn = document.createElement('button');
+        categoryBtn.className = "category-btn btn btn-ghost w-full";
+        categoryBtn.innerText = category.category_name;
+        categoryBtn.addEventListener('click', () => {
+            for (const btn of allCategoryBtn) {
+                btn.classList.remove('bg-[#15803D]', 'text-white');
+                btn.classList.add('btn-ghost');
+            }
+            categoryBtn.classList.add('bg-[#15803D]', 'text-white');
+            plantCardsContainer.innerHTML = '';
+            loadPlantsByCategory(category.id);
+        })
+        categoryBtnContainer.appendChild(categoryBtn);
+
+    })
+}
+
+const loadPlantsByCategory = async (categoryId) => {
+    showLoadingSpinner(true);
+    const res = await fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`);
+    const data = await res.json();
+    displayPlants(data.plants);
+    showLoadingSpinner(false);
+}
+
+const loadAllTrees = async () => {
+    const allCategoryBtn = document.getElementsByClassName('category-btn');
+    for (const btn of allCategoryBtn) {
+        btn.classList.remove('bg-[#15803D]', 'text-white');
+        btn.classList.add('btn-ghost');
+    }
+    allCategoryBtn[0].classList.add('bg-[#15803D]', 'text-white');
+    loadAllPlants();
+}
 
 
 const loadCategories = async () => {
@@ -11,9 +50,11 @@ const loadCategories = async () => {
 }
 
 const loadAllPlants = async () => {
+    showLoadingSpinner(true);
     const res = await fetch('https://openapi.programming-hero.com/api/plants');
     const data = await res.json();
     displayPlants(data.plants);
+    showLoadingSpinner(false);
 }
 
 const displayPlants = (plants) => {
@@ -35,6 +76,14 @@ const displayPlants = (plants) => {
         `
         plantCardsContainer.appendChild(plantCard);
     })
+}
+
+const showLoadingSpinner = (status) => {
+    if (status) {
+        loadingSpinner.classList.remove('hidden');
+    } else {  
+        loadingSpinner.classList.add('hidden');
+    }
 }
 
 loadCategories();
