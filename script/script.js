@@ -3,6 +3,10 @@ const categoryBtnContainer = document.getElementById('all-category-btns');
 const allCategoryBtn = document.getElementsByClassName('category-btn');
 const plantCardsContainer = document.getElementById('plant-card-container');
 const loadingSpinner = document.getElementById('loading-spinner');
+const cartItemsContainer = document.getElementById('cart-items');
+const emptyCartMessage = document.getElementById('empty-cart-message');
+const cartTotal = document.getElementById('cart-total');
+let cart = [];
 
 
 const displayCategories = (categories) => {
@@ -32,7 +36,8 @@ const loadPlantsByCategory = async (categoryId) => {
     showLoadingSpinner(false);
 }
 
-const loadAllTrees = async () => {
+const loadAllTrees = () => {
+    plantCardsContainer.innerHTML = '';
     const allCategoryBtn = document.getElementsByClassName('category-btn');
     for (const btn of allCategoryBtn) {
         btn.classList.remove('bg-[#15803D]', 'text-white');
@@ -58,7 +63,7 @@ const loadAllPlants = async () => {
 }
 
 const displayPlants = (plants) => {
-    plantCardsContainer.innerHTML = '';
+    // plantCardsContainer.innerHTML = '';
     plants.forEach((plant) => {
         const plantCard = document.createElement('div');
         plantCard.className = "p-4 bg-base-100 rounded-lg shadow-md space-y-3";
@@ -72,10 +77,55 @@ const displayPlants = (plants) => {
                 <p class="font-semibold text-sm">৳${plant.price}</p>
             </div>
          </div>
-        <button class="btn w-full bg-[#15803D] text-white rounded-full">Add to Cart</button>
+        <button onclick="addToCart(${plant.id}, '${plant.name}', ${plant.price})" class="btn w-full bg-[#15803D] text-white rounded-full">Add to Cart</button>
         `
         plantCardsContainer.appendChild(plantCard);
     })
+}
+
+const addToCart = (id, name, price) => {
+    const existingItem = cart.find(item => item.id === id);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ id, name, price, quantity: 1 });
+    }
+    updateCartUI();
+}
+
+const updateCartUI = () => {
+    cartItemsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        emptyCartMessage.classList.remove('hidden');
+        cartTotal.textContent = '0.00';
+        return;
+    } else {
+        emptyCartMessage.classList.add('hidden');
+    }
+
+    let total = 0;
+    cart.forEach((item) => {
+        total += item.price * item.quantity;
+        const cartItem = document.createElement('div');
+        cartItem.className = "flex justify-between items-center py-2 px-3 bg-[#F0FDF4] rounded-lg mb-3";
+        cartItem.innerHTML = `
+        <div>
+            <h3 class="font-semibold text-sm mb-1">${item.name}</h3>
+            <p class="text-[#1F2937]">৳${item.price} x ${item.quantity}</p>
+        </div>
+        <div>
+            <button class="btn btn-ghost btn-sm" onclick="removeFromCart(${item.id})">x</button>
+        </div>
+        `
+        cartItemsContainer.appendChild(cartItem);
+    })
+    cartTotal.textContent = total.toFixed(2);
+}
+
+const removeFromCart = (id) => {
+    cart = cart.filter(item => item.id !== id);
+    updateCartUI();
 }
 
 const showLoadingSpinner = (status) => {
