@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Green Earth</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        * {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F0FDF4]">
+    <header>
+        <!-- Navigation Bar -->
+        <section>
+            <div class="navbar bg-[#15803D] shadow-sm">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a>Gallery</a></li>
+                            <li><a>Plant a Tree</a></li>
+                        </ul>
+                    </div>
+                    <a href="index.html" class="btn btn-ghost text-xl text-white">Green Earth</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-white">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="font-semibold">About</a></li>
+                        <li><a>Gallery</a></li>
+                        <li><a>Plant a Tree</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn text-[#15803D] bg-[#FACC15] rounded-full">Plant a Tree</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="py-24 bg-[#CFF0DC] relative">
+            <div class="text-center z-10 relative">
+                <h1 class="font-bold text-5xl mb-4 text-[#15803D]">About Green Earth</h1>
+                <p class="text-lg mb-6 opacity-80 max-w-2xl mx-auto px-4">We're on a mission to make the planet greener, <br class="hidden sm:inline">
+                    one tree at a time. Join us in creating a sustainable future.</p>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <!-- Our Mission Section -->
+        <section class="w-[95%] md:container mx-auto my-16 md:my-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-bold text-4xl mb-6 text-[#15803D]">Our Mission</h2>
+                    <p class="opacity-70 mb-5 text-lg leading-relaxed">
+                        Green Earth was founded with a simple but powerful vision: to combat climate change through 
+                        large-scale tree plantation. We believe that by empowering communities and individuals to 
+                        plant trees, we can create lasting environmental change.
+                    </p>
+                    <p class="opacity-70 mb-5 text-lg leading-relaxed">
+                        Since 2020, we've been working tirelessly to restore degraded forests, create green spaces 
+                        in urban areas, and educate people about the importance of trees in our ecosystem. Every 
+                        tree planted is a step towards a healthier planet.
+                    </p>
+                    <div class="flex gap-4 mt-8">
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold text-[#15803D]">500K+</h3>
+                            <p class="text-sm opacity-70">Trees Planted</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold text-[#15803D]">50+</h3>
+                            <p class="text-sm opacity-70">Countries</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold text-[#15803D]">1M</h3>
+                            <p class="text-sm opacity-70">Goal by 2027</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#CFF0DC] rounded-2xl p-12 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-8xl mb-4">🌱</div>
+                        <p class="text-xl font-semibold text-[#15803D]">Growing a Better Tomorrow</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section class="bg-[#CFF0DC] py-16">
+            <div class="w-[95%] md:container mx-auto">
+                <h2 class="font-bold text-4xl text-center mb-12 text-[#15803D]">Our Core Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+                        <div class="text-5xl mb-4">🌍</div>
+                        <h3 class="font-semibold text-xl mb-3 text-[#15803D]">Sustainability</h3>
+                        <p class="opacity-70">
+                            We focus on long-term environmental impact, ensuring every tree we plant contributes 
+                            to a sustainable future for generations to come.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+                        <div class="text-5xl mb-4">🤝</div>
+                        <h3 class="font-semibold text-xl mb-3 text-[#15803D]">Community</h3>
+                        <p class="opacity-70">
+                            We believe in the power of collective action. Our success is built on partnerships 
+                            with local communities and volunteers worldwide.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+                        <div class="text-5xl mb-4">💚</div>
+                        <h3 class="font-semibold text-xl mb-3 text-[#15803D]">Transparency</h3>
+                        <p class="opacity-70">
+                            Every donation and tree planted is tracked and reported. We maintain complete 
+                            transparency in all our operations and impact metrics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="w-[95%] md:container mx-auto my-16 md:my-24">
+            <h2 class="font-bold text-4xl text-center mb-4 text-[#15803D]">Meet Our Team</h2>
+            <p class="text-center opacity-70 mb-12 max-w-2xl mx-auto">
+                Our dedicated team of environmental enthusiasts, scientists, and community organizers 
+                work around the clock to make our green vision a reality.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <div class="bg-[#CFF0DC] h-48 flex items-center justify-center">
+                        <div class="text-7xl">👨‍💼</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-xl mb-1">James Carter</h3>
+                        <p class="text-[#15803D] font-medium mb-2">Founder & CEO</p>
+                        <p class="text-sm opacity-70">Environmental scientist with 15+ years of experience in reforestation.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <div class="bg-[#CFF0DC] h-48 flex items-center justify-center">
+                        <div class="text-7xl">👩‍🔬</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-xl mb-1">Sarah Mitchell</h3>
+                        <p class="text-[#15803D] font-medium mb-2">Head of Operations</p>
+                        <p class="text-sm opacity-70">Passionate about sustainable development and community engagement.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <div class="bg-[#CFF0DC] h-48 flex items-center justify-center">
+                        <div class="text-7xl">👨‍🌾</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-xl mb-1">Michael Chen</h3>
+                        <p class="text-[#15803D] font-medium mb-2">Field Coordinator</p>
+                        <p class="text-sm opacity-70">Manages plantation projects and coordinates with local volunteers.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <div class="bg-[#CFF0DC] h-48 flex items-center justify-center">
+                        <div class="text-7xl">👩‍💻</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-xl mb-1">Emma Rodriguez</h3>
+                        <p class="text-[#15803D] font-medium mb-2">Technology Director</p>
+                        <p class="text-sm opacity-70">Develops tools to track and monitor our environmental impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Timeline -->
+        <section class="bg-[#CFF0DC] py-16">
+            <div class="w-[95%] md:container mx-auto">
+                <h2 class="font-bold text-4xl text-center mb-12 text-[#15803D]">Our Journey</h2>
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#15803D] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                2020
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">The Beginning</h3>
+                                <p class="opacity-70">Green Earth was founded with a mission to plant 1 million trees. 
+                                Started with just 5 volunteers and planted our first 1,000 trees.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#15803D] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                2022
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">Global Expansion</h3>
+                                <p class="opacity-70">Expanded operations to 50+ countries and reached 100,000 trees 
+                                planted. Partnered with local communities worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#15803D] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                2024
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">Half Million Milestone</h3>
+                                <p class="opacity-70">Celebrated planting our 500,000th tree. Launched digital platform 
+                                for tracking individual contributions and environmental impact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md border-2 border-[#FACC15]">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#FACC15] text-[#15803D] rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                2026
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl mb-2">Present Day</h3>
+                                <p class="opacity-70">Continuing our mission with renewed energy. On track to reach 
+                                1 million trees by 2027. Join us in making history!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="bg-[#166534] py-16">
+            <div class="w-[95%] md:container mx-auto text-center">
+                <h2 class="font-bold text-4xl text-white mb-6">Join Our Mission</h2>
+                <p class="text-white opacity-90 text-lg mb-8 max-w-2xl mx-auto">
+                    Together, we can make a real difference. Whether you plant a tree, donate, or spread 
+                    awareness, every action counts towards a greener future.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="index.html" class="btn bg-[#FACC15] text-[#15803D] rounded-full px-8 border-0 hover:bg-[#EAB308]">
+                        Start Planting
+                    </a>
+                    <button class="btn bg-white text-[#15803D] rounded-full px-8 border-0 hover:bg-gray-100">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer footer-center text-white bg-[#14532D] text-base-content p-6">
+            <aside>
+                <p>© 2026 Green Earth. All Rights Reserved.</p>
+            </aside>
+        </footer>
+    </main>
+</body>
+</html>

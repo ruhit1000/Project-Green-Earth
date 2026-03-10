@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -41,22 +41,25 @@
                         </div>
                         <ul tabindex="-1"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>About</a></li>
+                            <li><a href="./about.html">About</a></li>
                             <li><a>Gallery</a></li>
-                            <li><a>Plant a Tree</a></li>
+                            <li><a href="#plant-card-container">Plant a Tree</a></li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost text-xl text-white">Green Earth</a>
+                    <a href="./index.html" class="btn btn-ghost text-xl text-white">Green Earth</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1 text-white">
-                        <li><a>About</a></li>
+                        <li><a href="./about.html">About</a></li>
                         <li><a>Gallery</a></li>
-                        <li><a>Plant a Tree</a></li>
+                        <li><a href="#plant-card-container">Plant a Tree</a></li>
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="btn text-[#15803D] bg-[#FACC15] rounded-full">Plant a Tree</a>
+                    <button class="btn text-[#15803D] bg-[#FACC15] rounded-full"
+                        onclick="document.getElementById('plant-card-container').scrollIntoView({ behavior: 'smooth' })">
+                        Plant a Tree
+                    </button>
                 </div>
             </div>
         </section>
@@ -67,7 +70,10 @@
                 <h2 class="font-bold text-4xl mb-2">Plant a Tree, Grow a Future</h2>
                 <p class="mb-6">Join our mission to plant 1 million trees and make the Earth greener for future <br>
                     generations.</p>
-                <button class="btn rounded-full text-[#15803D] bg-[#FACC15]">Get Involved</button>
+                <button class="btn rounded-full text-[#15803D] bg-[#FACC15]"
+                    onclick="document.getElementById('plant-card-container').scrollIntoView({ behavior: 'smooth' })">
+                    Get Involved
+                </button>
             </div>
             <img class="absolute bottom-0 left-0 hidden sm:inline w-xs xl:w-md" src="./assets/hero-leaf1.png" alt="">
             <img class="absolute bottom-0 right-0 hidden sm:inline w-xs xl:w-md" src="./assets/hero-leaf2.png" alt="">
