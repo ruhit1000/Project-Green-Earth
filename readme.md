@@ -31,23 +31,6 @@ The overall goal of the project is to combine modern web development practices w
 
 ---
 
-## Project Structure
-Project-Green-Earth/
-│
-├── index.html
-├── about.html
-│
-├── js/
-│ └── script.js
-│
-├── assets/
-│ ├── images
-│ └── icons
-│
-└── README.md
-
----
-
 ## How to Run the Project
 
 1. [Clone the repository](https://github.com/ruhit1000/Project-Green-Earth)
